@@ -25,7 +25,7 @@ pub fn load_svg_string(svg_data: String) -> LoadSVGResult {
     }
     Err(err) => LoadSVGResult {
       success: false,
-      result: format!("Fehler beim Parsen der SVG: {}", err),
+      result: format!("Error while paraing the SVG data: {}", err),
     },
   }
 }
@@ -39,7 +39,7 @@ pub fn load_svg_file(svg_path: String) -> LoadSVGResult {
   if !path.exists() {
     return LoadSVGResult {
       success: false,
-      result: format!("Datei nicht gefunden: {}", svg_path),
+      result: format!("File not found: {}", svg_path),
     };
   }
 
@@ -49,7 +49,7 @@ pub fn load_svg_file(svg_path: String) -> LoadSVGResult {
     Err(err) => {
       return LoadSVGResult {
         success: false,
-        result: format!("Fehler beim Einlesen der Datei: {}", err),
+        result: format!("Error while reading the File: {}", err),
       };
     }
   };
@@ -65,7 +65,7 @@ pub fn load_svg_file(svg_path: String) -> LoadSVGResult {
     }
     Err(err) => LoadSVGResult {
       success: false,
-      result: format!("Fehler beim Parsen der SVG: {}", err),
+      result: format!("Error while paraing the SVG data: {}", err),
     },
   }
 }
